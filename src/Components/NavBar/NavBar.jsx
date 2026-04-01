@@ -1,6 +1,6 @@
 import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
-const NavBar = () => {
+const NavBar = ({cartItems}) => {
   return (
     <div className="sticky top-0 z-50 bg-white">
       <div className="shadow-sm py-2">
@@ -66,8 +66,13 @@ const NavBar = () => {
               </li>
           </ul>
         </div>
-        <div className="navbar-end gap-5"> 
+        <div className="navbar-end gap-5">
+          <div className="relative">
           <FiShoppingCart />
+          
+            {cartItems.length > 0 && <span className="badge badge-sm rounded-full p-1 w-4 h-4 badge-error absolute -top-2 -right-2">{cartItems.length}</span>}
+        
+          </div>
          <a className="font-semibold hover:btn" href="#">Login</a>
           <a className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white">Get Started</a>
         </div>

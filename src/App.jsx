@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar cartItems ={cartItems}/>
       <Banner />
       <SuccessBanner />
       <Premium />
@@ -38,21 +38,25 @@ function App() {
           type="radio"
           name="my_tabs_1"
           className={`tab btn ${activeTab === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] shadow shadow-[#6107EC] text-white" : "bg-white shadow text-black "} rounded-full w-30 `}
-          aria-label="Cart"
+          aria-label={`Cart (${cartItems.length})`}
           onClick={() => setActiveTab("cart")}
         />
       </div>
-      {activeTab === "cart" ? (
+      {/* {activeTab === "cart" ? (
         <Cart cartItems={cartItems} />
       ) : (
         <Suspense fallback={<div>Loading...</div>}>
           <Cards CardData={CardData} cartItems ={cartItems} setCartItems={setCartItems} />
         </Suspense>
-      )}
+      )} */}
+      
       {/* <Cart /> */}
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <Cards CardData={CardData} />
-      </Suspense> */}
+      <Suspense fallback={<div>Loading...</div>}>
+      {activeTab === "products" &&
+        <Cards CardData={CardData} cartItems ={cartItems} setCartItems={setCartItems} />
+      }
+      </Suspense>
+      {activeTab === "cart" && <Cart cartItems={cartItems} setCartItems={setCartItems}/>}
       <Footer />
     </>
   );
