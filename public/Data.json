@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Supercharge your writing with AI-powered content generation and editing tools.",
+    "price": 14.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "AI-powered content generation",
+      "SEO keyword suggestions",
+      "Multi-language support"
+    ],
+    "icon": "https://i.ibb.co.com/kg7tBtVJ/writing-2327400-1.png"
+  },
+  {
+    "id": 2,
+    "name": "Design Templates Pack",
+    "description": "Access thousands of stunning, ready-to-use design templates for every need.",
+    "price": 9.99,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "5000+ premium templates",
+      "Drag-and-drop editor",
+      "Export to PNG, JPG & SVG"
+    ],
+    "icon": "https://i.ibb.co.com/dsd3fXSt/design-tool.png"
+  },
+  {
+    "id": 3,
+    "name": "Premium Stock Assets",
+    "description": "Unlimited access to high-quality stock photos, videos, icons, and illustrations.",
+    "price": 19.99,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "best-seller",
+    "features": [
+      "10M+ royalty-free stock photos",
+      "HD & 4K stock videos",
+      "Commercial use license"
+    ],
+    "icon": "https://i.ibb.co.com/TM17fV87/camera-8775444-1.png"
+  },
+  {
+    "id": 4,
+    "name": "Automation Toolkit",
+    "description": "Automate repetitive tasks and build powerful workflows without writing code.",
+    "price": 24.99,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "popular",
+    "features": [
+      "1000+ app integrations",
+      "Scheduled & trigger-based automation",
+      "API connector & webhooks"
+    ],
+    "icon": "https://i.ibb.co.com/67VznZGz/operation.png"
+  },
+  {
+    "id": 5,
+    "name": "Resume Builder Pro",
+    "description": "Create job-winning resumes and cover letters with professional templates.",
+    "price": 12.99,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "100+ ATS-friendly templates",
+      "AI-powered resume suggestions",
+      "Job match score checker"
+    ],
+    "icon": "https://i.ibb.co.com/B5nYYfcB/portfolio.png"
+  },
+  {
+    "id": 6,
+    "name": "Social Media Content Kit",
+    "description": "Plan, create, and schedule engaging social media content across all platforms.",
+    "price": 17.99,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "AI caption & hashtag generator",
+      "Content calendar & scheduler",
+      "Multi-platform publishing"
+    ],
+    "icon": "https://i.ibb.co.com/N6WgGsG6/social-media.png"
+  }
+]

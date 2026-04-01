@@ -24,7 +24,7 @@ const Banner = () => {
           </div>
         </div>
         <div className=" animate-pulse relative px-5 md:px-0 ">
-            <img className="shadow-2xl shadow-purple-200 rounded-lg transition duration-300" src={banner} alt="" />
+            <img className="shadow-2xl shadow-blue-200 rounded-lg transition duration-1000" src={banner} alt="" />
         </div>
       </div>
     </>

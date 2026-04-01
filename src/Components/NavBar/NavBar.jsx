@@ -2,9 +2,9 @@ import React from "react";
 import { FiShoppingCart } from "react-icons/fi";
 const NavBar = () => {
   return (
-    <div>
+    <div className="sticky top-0 z-50 bg-white">
       <div className="shadow-sm py-2">
-        <div className="max-w-7xl mx-auto navbar">
+        <div className="max-w-7xl mx-auto navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
