@@ -15,11 +15,11 @@ const getData = async () => {
   const res = await fetch("/Data.json");
   return res.json();
 };
+const CardData = getData();
 function App() {
-  const CardData = getData();
   const [activeTab, setActiveTab] = useState("products");
   const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <>
@@ -54,7 +54,7 @@ function App() {
       )} */}
       
       {/* <Cart /> */}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<span className="loading loading-bars loading-lg flex text-center mx-auto items-center h-10"></span>}>
       {activeTab === "products" &&
         <Cards CardData={CardData} cartItems ={cartItems} setCartItems={setCartItems} />
       }

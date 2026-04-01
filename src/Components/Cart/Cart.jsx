@@ -18,7 +18,7 @@ const Cart = ({ cartItems , setCartItems }) => {
   return (
     <div className="max-w-7xl mx-auto mb-10 p-20  shadow border border-gray-100 rounded-lg space-y-5">
         <h3 className="text-3xl font-bold">Your Cart</h3>
-        {cartItems.length === 0 ? <p className="text-gray-500">Your cart is empty. Start adding some products!</p> :  <>
+        {cartItems.length === 0 ? <p className="text-gray-500 text-4xl">Your cart is empty. Start adding some products!</p> :  <>
         {cartItems.map(item => (
             <div key={item.id} className="bg-gray-100 p-5 flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center rounded-lg shadow mb-4">
                 <div className="flex flex-col md:flex-row items-center gap-4">
@@ -39,7 +39,7 @@ const Cart = ({ cartItems , setCartItems }) => {
             <p>Total:</p>
             <h3>${totalPrice}</h3>
         </div>
-        <button onClick={handleCheckout} className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-full p-6 font-bold rounded-full">Proceed to Checkout</button>
+        <button onClick={handleCheckout} className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white w-fit flex mx-auto p-6 font-bold rounded-full">Proceed to Checkout</button>
     </div>
   );
 };

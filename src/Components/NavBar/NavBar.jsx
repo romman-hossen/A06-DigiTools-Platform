@@ -73,7 +73,7 @@ const NavBar = ({cartItems}) => {
             {cartItems.length > 0 && <span className="badge badge-sm rounded-full p-1 w-4 h-4 badge-error absolute -top-2 -right-2">{cartItems.length}</span>}
         
           </div>
-         <a className="font-semibold" href="#">Login</a>
+         <a className="font-semibold hidden md:block" href="#">Login</a>
           <a className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full text-white">Get Started</a>
         </div>
         </div>
