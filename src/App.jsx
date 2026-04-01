@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import SuccessBanner from "./Components/Banner/SuccessBanner";
@@ -6,6 +6,7 @@ import Cards from "./Components/Cards/Cards";
 import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import NavBar from "./Components/NavBar/NavBar";
+import Premium from "./Components/Premium/Premium";
 
 const getData = async () => {
   const res = await fetch("/Data.json");
@@ -13,34 +14,45 @@ const getData = async () => {
 };
 function App() {
   const CardData = getData();
-  const []
+  const [activeTab, setActiveTab] = useState("products");
+  const [cartItems, setCartItems] = useState([]);
+  console.log(cartItems);
 
   return (
     <>
       <NavBar />
       <Banner />
       <SuccessBanner />
-      <Cart />
+      <Premium />
       {/* name of each tab group should be unique */}
-      <div className="tabs tabs-box flex justify-center bg-white w-70 mx-auto border border-gray-100 rounded-full py-2 mb-10  ">
+      <div className="tabs tabs-box flex gap-1 justify-center bg-white w-70 mx-auto border border-gray-100 rounded-full py-2 mb-10  ">
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] shadow shadow-[#6107EC] rounded-full w-30 text-white"
+          className={`tab btn ${activeTab === "products" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] shadow shadow-[#6107EC] text-white" : "bg-white shadow text-black "} rounded-full w-30 `}
           aria-label="Products"
+          onClick={() => setActiveTab("products")}
           defaultChecked
         />
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full w-30  text-white"
+          className={`tab btn ${activeTab === "cart" ? "bg-linear-to-r from-[#4F39F6] to-[#9514FA] shadow shadow-[#6107EC] text-white" : "bg-white shadow text-black "} rounded-full w-30 `}
           aria-label="Cart"
-          
+          onClick={() => setActiveTab("cart")}
         />
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
+      {activeTab === "cart" ? (
+        <Cart cartItems={cartItems} />
+      ) : (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Cards CardData={CardData} cartItems ={cartItems} setCartItems={setCartItems} />
+        </Suspense>
+      )}
+      {/* <Cart /> */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <Cards CardData={CardData} />
-      </Suspense>
+      </Suspense> */}
       <Footer />
     </>
   );

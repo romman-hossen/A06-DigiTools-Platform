@@ -1,24 +1,15 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
-    <div className="max-w-7xl mx-auto mb-10">
-     <div className="text-center space-y-4 mb-5 ">
-      <h3 className="text-5xl font-extrabold ">Premium Digital Tools</h3>
-      <p className="text-gray-500">
-        Choose from our curated collection of premium digital products designed <br />
-        to boost your productivity and creativity.
-      </p>
-      </div>
-
-      {/* <div role="tablist" className="tabs tabs-box flex justify-center bg-white ">
-        <a role="tab" className="tab tab-active btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] rounded-full  text-white">
-         Products
-        </a>
-        <a role="tab" className="tab ">
-         Cart
-        </a>
-      </div> */}
+    <div className="max-w-7xl mx-auto mb-10  bg-red-500">
+        {cartItems.map(item => (
+            <div key={item.id} className="bg-white p-4 rounded-lg shadow mb-4">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <p>${item.price}/{item.period}</p>
+            </div>
+        ))}
     </div>
   );
 };
