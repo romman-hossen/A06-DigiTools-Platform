@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { MdDone } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const Card = ({card, cartItems, setCartItems}) => {
     const {name,description,price,period,tag,features,icon} = card;
     const [buyNow,setBuyNow] = useState(false);
     const handleBuyNow = () => {
+         setBuyNow(true);
         const isAllReadyInCart = cartItems.find(item => item.id === card.id);
         if(isAllReadyInCart){
-            alert('This item is already in the cart');
+            toast.error('This item is already in the cart');
             return;
         }
-        setBuyNow(true);
+        toast.success('Item added to cart successfully');
         setCartItems( [...cartItems,card]);
     }
     // console.log(name);

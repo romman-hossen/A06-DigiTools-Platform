@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Premium from "./Components/Premium/Premium";
 import Steps from "./Components/Steps/Steps";
 import Pricing from "./Components/Pricing/Pricing";
+import Tansform from "./Components/Tansfrom/Tansform";
 
 const getData = async () => {
   const res = await fetch("/Data.json");
@@ -61,6 +62,7 @@ function App() {
       {activeTab === "cart" && <Cart cartItems={cartItems} setCartItems={setCartItems}/>}
       <Steps />
       <Pricing />
+      <Tansform />
       <Footer />
     </>
   );

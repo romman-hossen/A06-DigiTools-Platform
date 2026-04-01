@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <>
       <div className="max-w-7xl flex-col md:flex-row mx-auto flex gap-14 items-center mt-20  ">
-        <div className="flex-1 space-y-5 text-center md:text-left flex flex-col">
+        <div className="flex-1 p-10 md:p-0 space-y-5 text-center md:text-left flex flex-col">
           <div className="flex gap-1 items-center justify-center mx-auto md:mx-0 rounded-full bg-indigo-100 py-3 w-[294px] hover:cursor-pointer hover:shadow-lg shadow-indigo-300 transition duration-300">
             <img className="w-4 h-4" src={Dot} alt="" />
             <span className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] bg-clip-text text-transparent">New: AI-Powered Tools Available</span>
